@@ -12,9 +12,14 @@ public class MoveForward : MonoBehaviour
         
     }
 
+    void MoveEntity()
+    {
+        transform.Translate(Vector3.forward * Time.deltaTime * speed); // move entity in forward direction
+    }
+
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        MoveEntity();
     }
 }

@@ -13,16 +13,23 @@ public class DestroyOutOfBounds : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void EntityDestroy()
     {
-        if(transform.position.z > topBoundary)
+        // If entity goes off screen, destroy it.
+        if (transform.position.z > topBoundary)
         {
             Destroy(gameObject);
         }
         else if (transform.position.z < lowerBoundary)
         {
             Destroy(gameObject);
-        }    
+            Debug.Log("Game Over!");
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        EntityDestroy();
     }
 }
